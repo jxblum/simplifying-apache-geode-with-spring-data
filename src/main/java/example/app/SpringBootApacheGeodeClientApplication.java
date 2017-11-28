@@ -20,7 +20,6 @@ import static example.app.util.Assertions.assertCustomer;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.apache.geode.cache.Region;
-import org.apache.geode.cache.RegionShortcut;
 import org.apache.geode.cache.client.ClientCache;
 import org.apache.geode.cache.client.ClientRegionShortcut;
 import org.apache.geode.cache.client.Pool;
