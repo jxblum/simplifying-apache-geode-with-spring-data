@@ -1,0 +1,5 @@
+start locator --name=LocatorOne --log-level=config
+start server --name=ServerOne --log-level=config
+list members
+#describe member --name=LocatorOne
+describe member --name=ServerOne

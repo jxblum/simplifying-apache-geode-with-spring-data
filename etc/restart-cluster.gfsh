@@ -1,0 +1,2 @@
+run --file=/Users/jblum/pivdev/spring-data-examples-workspace/simple-spring-geode-app/etc/stop-cluster.gfsh
+run --file=/Users/jblum/pivdev/spring-data-examples-workspace/simple-spring-geode-app/etc/start-cluster.gfsh

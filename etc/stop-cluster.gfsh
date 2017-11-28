@@ -1,0 +1,4 @@
+destroy index --name=CustomerNameHashIdx
+#destroy region --name=/Customers
+stop server --name=ServerOne
+stop locator --name=LocatorOne
