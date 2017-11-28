@@ -7,9 +7,9 @@ to persist and query `Customer` data.
 
 The purpose of this example is to demonstrate how **easy** and **quick**
 it can be **to get started** building a simple _Spring_ application
-using Apache Geode, and scale it up.
+using _Apache Geode_, and scale it up.
 
-No other data store, not **_Redis_** nor **_Hazelcast_**, is as simple
+No other data store, not _Redis_ nor _Hazelcast_, is as simple
 to setup or use given the power of _Spring Data Geode_ (SDG), despite
 there being [Spring Data modules](http://projects.spring.io/spring-data/)
 for both [Redis](https://projects.spring.io/spring-data-redis)
@@ -18,26 +18,21 @@ and despite _Spring Boot_ providing [_auto-configuration_ support](https://docs.
 for (again) both [Redis](https://docs.spring.io/spring-boot/docs/2.0.0.M6/reference/htmlsingle/#boot-features-redis)
 and [Hazelcast](https://github.com/spring-projects/spring-boot/tree/master/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/hazelcast).
 
-Additionally, neither **_Redis_** nor **_Hazelcast_** is as feature rich
-nor as reliable as _Apache Geode_ for managing your data _consistently_
-and _performantly_ at cloud-scale.  _Apache Geode_ is a true enterprise
-solution unlike many other IMDGs that has existed since 2002.
-
-Of course, **_Redis_** is a very popular and meaningful data store
-that compliments rather than competes directly with Apache Geode,
-unlike _Hazelcast_.  _Apache Geode_ is good replacement for _Hazelcast_
-when your application needs both performant and consistent data access
-at cloud-scale.
+Of course, _Redis_ is a very popular and powerful data store
+that compliments rather than competes directly with _Apache Geode_,
+unlike _Hazelcast_.  _Apache Geode_ is a good replacement for
+_Hazelcast_ when your application needs more reliable, performant
+and consistent data access at cloud-scale.
 
 > NOTE: _Apache Geode_ is the open source core of [_Pivotal GemFire_](https://pivotal.io/pivotal-gemfire).
 
-This step-by-step guide walks you through the application
+This step-by-step tutorial guides you through the application
 and how it works.
 
 
-#### Guide
+### Tutorial
 
-_Prerequisites_
+#### _Prerequisites_
 
 This guide assumes a basic understanding of _Apache Geode_,
 IMDG / No-SQL, and _Spring Data_ concepts.
@@ -53,15 +48,15 @@ There are also several examples on using _Spring Data GemFire/Geode_
 in the [Guides at spring.io](https://spring.io/guides).
 
 
-###### _Problem_
+#### _Problem_
 
 Suppose we need to create a customer service application that stores
 customer data and allows the user to search for customers by name.
 
 
-###### _Prototyping the customer service application_
+#### _Prototyping the customer service application_
 
-_Customer class_
+###### _Customer class_
 
 First, we need to define an application domain object to encapsulate
 customer information.
@@ -78,7 +73,7 @@ class Customer {
 }
 ````
 
-> The actual `Customer` class definition uses the highly convenient
+> TIP: The actual `Customer` class definition uses the highly convenient
 [Project Lombok](https://projectlombok.org/) framework to simplify
 the definition of our `Customer` class.
 
@@ -106,7 +101,7 @@ Finally, you will notice that `Customer` `name` field is annotated with
 on the customer's name, thereby improving query by name performance.
 More on this later.
 
-_CustomerRepository interface_
+###### _CustomerRepository interface_
 
 Next, we need to define a _Repository_ implementation to store and query
 `Customer` objects in _Apache Geode_.
@@ -128,7 +123,7 @@ Of course, you define additional ([OQL-based](http://geode.apache.org/docs/guide
 queries simply by defining "query" methods in the `CustomerRepository` interface
 and following certain [conventions](https://docs.spring.io/spring-data/geode/docs/current/reference/html/#gemfire-repositories.executing-queries).
 
-_Spring Boot Application class_
+###### _Spring Boot Application class_
 
 Now, we just need to define a _Spring Boot_ application class
 to get configure everything and run our application.
@@ -190,7 +185,7 @@ ApplicationRunner runner(CustomerRepository customerRepository) {
 The application is _ready to run_!
 
 
-###### But wait! What about configuring _Apache Geode_?
+#### _But wait! What about configuring _Apache Geode_?_
 
 Well, you may have already noticed, but that was handled by 3
 [_Spring Data Geode_ configuration annotations](https://docs.spring.io/spring-data/geode/docs/current/reference/html/#bootstrap-annotation-config).
@@ -238,7 +233,7 @@ to define an _Apache Geode_ `Index` on our "Customers" _Region_.
 Now, let's run the application!
 
 
-###### _Running The Application_
+#### _Running The Application_
 
 When you run the `SpringBootApacheGeodeClientApplication` you will
 see _Spring Boot_ `1.5.8.RELEASE` startup, _Apache Geode_ log output
@@ -254,7 +249,7 @@ Customer was [Customer(id=1, name=Jon Doe)]
 That was easy!
 
 
-###### _Next Steps_
+#### _Next Steps_
 
 We were able to store a `Customer` (i.e. "Jon Doe") and retrieve this
 `Customer` by name using the application's `CustomerRepository`,
@@ -337,7 +332,7 @@ With 1 simple change, your application is now fully client/server
 capable.
 
 
-##### Final steps
+#### _Final Steps_
 
 While it is **recommended** that you use _Gfsh_ to script your production
 configuration deployments, _Gfsh_ is not really a "_developer_" tool
@@ -521,8 +516,8 @@ With 6 simple configuration-based annotations...
 * `@EnableClusterConfiguration`
 
 ... SDG has unleashed a profound amount of power here, reducing much of
-the error-prone, highly redundant task of performing the required
-plumbing needed by your applications to even _get started_.
+the error-prone, boilerplate, highly redundant task of performing
+the required plumbing needed by your applications to even _get started_.
 
 We went from 0 to a fully cluster-capable application in very few
 lines of code.
@@ -532,7 +527,7 @@ staying true to _Spring's_ promise and commitment of developer productivity.
 
 And, this is just the tip of the iceberg.
 
-###### Where To Go From Here
+#### _Where To Go From Here_
 
 Be on the lookup for more example tutorials like this, showcasing many
 different, even more complex use cases.
@@ -544,7 +539,7 @@ You can also use this [repository](https://github.com/jxblum/contacts-applicatio
 containing several other examples, as a reference on how to use other
 _Aapche Geode_ features (e.g. _Continuous Query_) from _Spring_.
 
-#### Conclusion
+### Conclusion
 
 Thank you for reading this tutorial.
 
