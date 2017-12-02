@@ -14,7 +14,7 @@
  * permissions and limitations under the License.
  */
 
-package example.app.model;
+package example.app.client.model;
 
 import org.springframework.data.gemfire.mapping.annotation.Indexed;
 import org.springframework.data.gemfire.mapping.annotation.Region;
@@ -24,12 +24,13 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 /**
- * The {@link Customer} class defines an Abstract Data Type (ADT) modeling a customer.
+ * The {@link Customer} class is an Abstract Data Type (ADT) modeling a customer.
  *
  * @author John Blum
  * @see org.springframework.data.annotation.Id
  * @see org.springframework.data.gemfire.mapping.annotation.Region
  * @see org.springframework.data.gemfire.mapping.annotation.Indexed
+ * @see lombok
  * @since 1.0.0
  */
 @Data

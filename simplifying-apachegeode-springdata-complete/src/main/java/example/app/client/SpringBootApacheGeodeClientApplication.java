@@ -14,9 +14,9 @@
  * permissions and limitations under the License.
  */
 
-package example.app;
+package example.app.client;
 
-import static example.app.util.Assertions.assertCustomer;
+import static example.app.client.util.Assertions.assertCustomer;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.apache.geode.cache.Region;
@@ -36,8 +36,8 @@ import org.springframework.data.gemfire.config.annotation.EnablePdx;
 import org.springframework.data.gemfire.repository.config.EnableGemfireRepositories;
 import org.springframework.data.repository.CrudRepository;
 
-import example.app.model.Customer;
-import example.app.repo.CustomerRepository;
+import example.app.client.model.Customer;
+import example.app.client.repo.CustomerRepository;
 
 /**
  * The {@link SpringBootApacheGeodeClientApplication} class is a simple Spring Boot, Apache Geode
@@ -87,12 +87,12 @@ import example.app.repo.CustomerRepository;
  * @since 1.0.0
  */
 @SpringBootApplication
-@ClientCacheApplication
+@ClientCacheApplication(name = "SpringBootApacheGeodeClientApplication")
 @EnableEntityDefinedRegions(basePackageClasses = Customer.class, clientRegionShortcut = ClientRegionShortcut.LOCAL)
 @EnableGemfireRepositories(basePackageClasses = CustomerRepository.class)
 @EnableIndexing
-//@EnablePdx
-//@EnableClusterConfiguration(useHttp = true)
+@EnablePdx
+@EnableClusterConfiguration(useHttp = true)
 public class SpringBootApacheGeodeClientApplication {
 
 	public static void main(String[] args) {

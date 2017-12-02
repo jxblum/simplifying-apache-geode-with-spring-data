@@ -14,11 +14,11 @@
  * permissions and limitations under the License.
  */
 
-package example.app.util;
+package example.app.client.util;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import example.app.model.Customer;
+import example.app.client.model.Customer;
 
 /**
  * Abstract utility class with assertions for {@link Customer} data.

@@ -14,22 +14,22 @@
  * permissions and limitations under the License.
  */
 
-package example.app.repo;
+package example.app.client.repo;
 
 import org.springframework.data.gemfire.repository.query.annotation.Trace;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.Repository;
 
-import example.app.model.Customer;
+import example.app.client.model.Customer;
 
 /**
  * Spring Data {@link Repository} with basic CRUD and simple (OQL) Query data access operations
  * for {@link Customer Customers}.
  *
- * A Spring Data {@link Repository} is analogous to the Data Access Object (DAO).
+ * A Spring Data {@link Repository} is analogous to a Data Access Object (DAO).
  *
  * @author John Blum
- * @see example.app.model.Customer
+ * @see example.app.client.model.Customer
  * @see org.springframework.data.repository.CrudRepository
  * @see org.springframework.data.repository.Repository
  * @since 1.0.0
