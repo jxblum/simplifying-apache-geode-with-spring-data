@@ -8,24 +8,51 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>1.5.8.RELEASE</version>
+    <version>1.5.9.RELEASE</version>
   </parent>
 
-  <groupId>example.app</groupId>
-  <artifactId>simple-spring-geode-app</artifactId>
-  <packaging>jar</packaging>
+  <groupId>io.springoneplatform.2017</groupId>
+  <artifactId>simplifying-apachegeode-springdata</artifactId>
+  <version>1.0.0.RELEASE</version>
+  <packaging>pom</packaging>
 
-  <name>Simple Spring Apache Geode Application</name>
+  <modules>
+    <module>simplifying-apachegeode-springdata-initial</module>
+    <module>simplifying-apachegeode-springdata-complete</module>
+  </modules>
+
+  <name>Simplifying Apache Geode with Spring Data</name>
   <description>
-    This example demonstrates a very simple, Spring Boot-based, Spring Data Geode enabled Apache Geode ClientCache
-    application.
+    Building effective Apache Geode applications quickly and easily requires a framework that provides
+    the right level of abstraction. In this session we take Alan Kay's infamous quote "Simple things should be simple;
+    Complex things should be possible" to a whole new level with Spring Data Geode using Spring Boot. I'll show you
+    how the new Annotation-based configuration model, which builds on existing concepts like SD Repositories,
+    Spring's Cache Abstraction and Apache Geode CQ, helps you rapidly build working Apache Geode client/server
+    applications in minutes. We end the session with a quick look at the roadmap and what users can expect next.
+    You won't want to miss this.
   </description>
-  <url></url>
+  <url>https://github.com/jxblum/simplifying-apache-geode-with-spring-data</url>
 
   <licenses>
     <license>
       <name>Apache License, Version 2.0</name>
       <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+      <comments>
+        Copyright 2017 the original author or authors.
+
+        Licensed under the Apache License, Version 2.0 (the "License");
+        you may not use this file except in compliance with the License.
+        You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+        Unless required by applicable law or agreed to in writing, software
+        distributed under the License is distributed on an "AS IS" BASIS,
+        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+        implied.
+        See the License for the specific language governing permissions and
+        limitations under the License.
+      </comments>
     </license>
   </licenses>
 
@@ -57,18 +84,63 @@
 
   <properties>
     <java.version>1.8</java.version>
-    <cp-elements.version>1.0.0.M3</cp-elements.version>
     <maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
     <maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
-    <jackson.version>2.9.2</jackson.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <cp-elements.version>1.0.0.M3</cp-elements.version>
+    <jackson.version>2.9.2</jackson.version>
+    <multithreadedtc.version>1.01</multithreadedtc.version>
     <spring.version>5.0.2.RELEASE</spring.version>
     <spring-data-releasetrain.version>Kay-SR2</spring-data-releasetrain.version>
-<!--
-    <spring-data-geode.version>2.1.0.BUILD-SNAPSHOT</spring-data-geode.version>
--->
     <spring-shell.version>1.2.0.RELEASE</spring-shell.version>
   </properties>
+
+  <repositories>
+    <repository>
+      <id>spring-libs-release</id>
+      <name>Spring libs-release Maven Repository</name>
+      <url>https://repo.spring.io/libs-release</url>
+    </repository>
+    <repository>
+      <id>spring-libs-milestone</id>
+      <name>Spring libs-milestone Maven Repository</name>
+      <url>https://repo.spring.io/libs-milestone</url>
+    </repository>
+    <repository>
+      <id>spring-libs-snapshot</id>
+      <name>Spring libs-snapshot Maven Repository</name>
+      <url>https://repo.spring.io/libs-snapshot</url>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>spring-plugins-release</id>
+      <url>http://repo.spring.io/plugins-release</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.codeprimate</groupId>
+        <artifactId>cp-elements</artifactId>
+        <version>${cp-elements.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.shell</groupId>
+        <artifactId>spring-shell</artifactId>
+        <version>${spring-shell.version}</version>
+        <scope>runtime</scope>
+      </dependency>
+      <dependency>
+        <groupId>edu.umd.cs.mtc</groupId>
+        <artifactId>multithreadedtc</artifactId>
+        <version>${multithreadedtc.version}</version>
+        <scope>test</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <dependencies>
     <dependency>
@@ -76,24 +148,75 @@
       <artifactId>assertj-core</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.data</groupId>
-      <artifactId>spring-data-geode</artifactId>
+      <groupId>org.codeprimate</groupId>
+      <artifactId>cp-elements</artifactId>
     </dependency>
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.springframework.shell</groupId>
-      <artifactId>spring-shell</artifactId>
-      <version>${spring-shell.version}</version>
-      <optional>true</optional>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jcl-over-slf4j</artifactId>
       <scope>runtime</scope>
     </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jul-to-slf4j</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>log4j-over-slf4j</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>edu.umd.cs.mtc</groupId>
+      <artifactId>multithreadedtc</artifactId>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven-compiler-plugin.version}</version>
+        <configuration>
+          <compilerArgs>
+            <arg>-Xlint:unchecked</arg>
+            <!-- <classpath>${java.home}/lib/tools.jar</classpath> -->
+          </compilerArgs>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>${maven-surefire-plugin.version}</version>
+        <configuration>
+          <argLine>
+            -Dgemfire.log-level=warning
+          </argLine>
+          <includes>
+            <include>**/*Test.java</include>
+            <include>**/*Tests.java</include>
+          </includes>
+          <reuseForks>false</reuseForks>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>

@@ -23,7 +23,10 @@ import org.springframework.data.repository.Repository;
 import example.app.model.Customer;
 
 /**
- * Spring Data basic CRUD and simple (OQL) Query {@link Repository} for {@link Customer Customers}.
+ * Spring Data {@link Repository} with basic CRUD and simple (OQL) Query data access operations
+ * for {@link Customer Customers}.
+ *
+ * A Spring Data {@link Repository} is analogous to the Data Access Object (DAO).
  *
  * @author John Blum
  * @see example.app.model.Customer

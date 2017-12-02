@@ -24,7 +24,7 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 /**
- * {@link Customer} is an Abstract Data Type (ADT) modeling a customer.
+ * The {@link Customer} class defines an Abstract Data Type (ADT) modeling a customer.
  *
  * @author John Blum
  * @see org.springframework.data.annotation.Id
