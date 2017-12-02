@@ -25,8 +25,8 @@ import org.apache.geode.cache.client.ClientRegionShortcut;
 import org.apache.geode.cache.client.Pool;
 import org.apache.geode.cache.query.Index;
 import org.springframework.boot.ApplicationRunner;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.gemfire.config.annotation.ClientCacheApplication;
 import org.springframework.data.gemfire.config.annotation.EnableClusterConfiguration;
@@ -96,7 +96,7 @@ import example.app.client.repo.CustomerRepository;
 public class SpringBootApacheGeodeClientApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootApacheGeodeClientApplication.class, args);
+		new SpringApplicationBuilder(SpringBootApacheGeodeClientApplication.class).web(false).build().run(args);
 	}
 
 	@Bean
