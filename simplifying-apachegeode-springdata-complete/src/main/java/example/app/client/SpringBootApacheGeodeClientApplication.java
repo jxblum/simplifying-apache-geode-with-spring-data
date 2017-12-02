@@ -91,7 +91,7 @@ import example.app.client.repo.CustomerRepository;
 @EnableEntityDefinedRegions(basePackageClasses = Customer.class, clientRegionShortcut = ClientRegionShortcut.LOCAL)
 @EnableGemfireRepositories(basePackageClasses = CustomerRepository.class)
 @EnableIndexing
-@EnablePdx
+//@EnablePdx
 //@EnableClusterConfiguration(useHttp = true)
 public class SpringBootApacheGeodeClientApplication {
 
