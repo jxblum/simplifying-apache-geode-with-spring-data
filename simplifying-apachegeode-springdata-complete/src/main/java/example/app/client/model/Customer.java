@@ -16,6 +16,7 @@
 
 package example.app.client.model;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.gemfire.mapping.annotation.Indexed;
 import org.springframework.data.gemfire.mapping.annotation.Region;
 
@@ -38,7 +39,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor(staticName = "newCustomer")
 public class Customer {
 
-	@NonNull
+	@Id @NonNull
 	private Long id;
 
 	@NonNull
