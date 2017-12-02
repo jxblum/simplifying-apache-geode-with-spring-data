@@ -1,0 +1,1 @@
+export GEODE_HOME=/Users/jblum/pivdev/apache-geode-1.2.1

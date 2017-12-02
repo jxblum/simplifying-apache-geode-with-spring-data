@@ -92,6 +92,8 @@
     <multithreadedtc.version>1.01</multithreadedtc.version>
     <spring.version>5.0.2.RELEASE</spring.version>
     <spring-data-releasetrain.version>Kay-SR2</spring-data-releasetrain.version>
+    <spring-data-geode.version>2.0.3.BUILD-SNAPSHOT</spring-data-geode.version>
+    <spring-data-gemfire.version>2.0.3.BUILD-SNAPSHOT</spring-data-gemfire.version>
     <spring-shell.version>1.2.0.RELEASE</spring-shell.version>
   </properties>
 
@@ -126,6 +128,16 @@
         <groupId>org.codeprimate</groupId>
         <artifactId>cp-elements</artifactId>
         <version>${cp-elements.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.data</groupId>
+        <artifactId>spring-data-gemfire</artifactId>
+        <version>${spring-data-gemfire.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.data</groupId>
+        <artifactId>spring-data-geode</artifactId>
+        <version>${spring-data-geode.version}</version>
       </dependency>
       <dependency>
         <groupId>org.springframework.shell</groupId>
