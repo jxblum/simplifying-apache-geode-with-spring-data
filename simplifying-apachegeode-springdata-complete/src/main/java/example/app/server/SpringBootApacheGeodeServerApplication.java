@@ -26,9 +26,16 @@ import org.springframework.data.gemfire.config.annotation.EnableManager;
 import org.springframework.data.gemfire.config.annotation.EnablePdx;
 
 /**
- * The SpringBootApacheGeodeServerApplication class...
+ * The {@link SpringBootApacheGeodeServerApplication} class is a {@link SpringBootApplication} used to bootstrap
+ * an Apache Geode server.
  *
  * @author John Blum
+ * @see org.springframework.boot.SpringApplication
+ * @see org.springframework.boot.autoconfigure.SpringBootApplication
+ * @see org.springframework.data.gemfire.config.annotation.CacheServerApplication
+ * @see org.springframework.data.gemfire.config.annotation.EnableLocator
+ * @see org.springframework.data.gemfire.config.annotation.EnableManager
+ * @see org.springframework.data.gemfire.config.annotation.EnablePdx
  * @since 1.0.0
  */
 @SpringBootApplication
