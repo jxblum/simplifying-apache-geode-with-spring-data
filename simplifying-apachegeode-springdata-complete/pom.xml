@@ -19,7 +19,7 @@
     This example demonstrates a very simple, Spring Boot-based, Spring Data Geode-enabled,
     Apache Geode client application.
   </description>
-  <url></url>
+  <url>https://github.com/jxblum/simplifying-apache-geode-with-spring-data/tree/master/simplifying-apachegeode-springdata-complete</url>
 
   <licenses>
     <license>
