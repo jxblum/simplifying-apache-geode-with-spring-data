@@ -1,4 +1,7 @@
-## Example Spring Boot Apache Geode Client Application
+## Simplifying Apache Geode with Spring Data
+
+Source code and examples for [*_Simplifying Apache Geode with Spring Data_*](https://springoneplatform.io/sessions/simplifying-apache-geode-with-spring-data)
+at *SpringOne Platform 2017*.
 
 This example demonstrates the use of [_Spring Boot_](http://projects.spring.io/spring-boot/)
 and [_Spring Data Geode_](http://projects.spring.io/spring-data-gemfire/)
