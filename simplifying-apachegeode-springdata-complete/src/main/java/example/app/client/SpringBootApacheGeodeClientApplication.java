@@ -92,7 +92,7 @@ import example.app.client.repo.CustomerRepository;
 @EnableGemfireRepositories(basePackageClasses = CustomerRepository.class)
 @EnableIndexing
 @EnablePdx
-@EnableClusterConfiguration(useHttp = true)
+//@EnableClusterConfiguration(useHttp = true)
 public class SpringBootApacheGeodeClientApplication {
 
 	public static void main(String[] args) {
