@@ -1,4 +1,4 @@
-run --file=/Users/jblum/pivdev/spring-data-examples-workspace/simple-spring-geode-app/etc/start-empty-cluster.gfsh
+run --file=/Users/jblum/pivdev/springonePlatform-2017/simplifying-apachegeode-with-springdata/etc/gfsh/start-empty-cluster.gfsh
 create region --name=Customers --type=PARTITION --skip-if-exists
 list regions
 describe region --name=/Customers

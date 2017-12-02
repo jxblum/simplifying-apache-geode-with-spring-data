@@ -1,1 +1,0 @@
-gfsh>remove --region=/Customers --key=1 --key-class=java.lang.Long
