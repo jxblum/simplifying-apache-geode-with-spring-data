@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<artifactId>simplifying-apachegeode-springdata</artifactId>
+		<groupId>io.springoneplatform.2017</groupId>
+		<version>1.0.0.RELEASE</version>
+	</parent>
+
+	<artifactId>simplifying-apachegeode-testing-springdata-complete</artifactId>
+	<packaging>jar</packaging>
+
+	<name>Simplifying Apache Geode Unit and Integration Testing with Spring Data Tests Complete</name>
+	<description>
+		This example demonstrates how to simplify Unit and Integration testing of Apache Geode in a Spring context
+		using the new Spring Data Tests for Pivotal GemFire (or Apache Geode) TestContext Framework.
+	</description>
+	<url>https://github.com/jxblum/simplifying-apache-geode-with-spring-data</url>
+
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
+		</license>
+	</licenses>
+
+	<organization>
+		<name>Pivotal Software, Inc.</name>
+		<url>http://www.pivotal.io</url>
+	</organization>
+
+	<developers>
+		<developer>
+			<id>jblum</id>
+			<name>John Blum</name>
+			<email>jblum at pivotal dot io</email>
+			<organization>Pivotal Software, Inc.</organization>
+			<organizationUrl>http://www.spring.io</organizationUrl>
+			<roles>
+				<role>Spring Data Team</role>
+				<role>Spring Data Cassandra Project Lead (Committer)</role>
+				<role>Spring Data GemFire Project Lead (Committer)</role>
+				<role>Spring Data Geode Project Lead (Committer)</role>
+				<role>Spring Session Data GemFire Project Lead (Committer)</role>
+				<role>Spring Session Data Geode Project Lead (Committer)</role>
+				<role>Spring Boot Data GemFire Project Lead (Committer)</role>
+				<role>Spring Boot Data Geode Project Lead (Committer)</role>
+				<role>Apache Geode Committer</role>
+			</roles>
+		</developer>
+	</developers>
+
+	<properties>
+		<spring-data-tests-4-gemfire.version>0.1.0.BUILD-SNAPSHOT</spring-data-tests-4-gemfire.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-tests-4-gemfire</artifactId>
+			<version>${spring-data-tests-4-gemfire.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.springoneplatform.2017</groupId>
+			<artifactId>simplifying-apachegeode-springdata-complete</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency>
+	</dependencies>
+
+</project>
