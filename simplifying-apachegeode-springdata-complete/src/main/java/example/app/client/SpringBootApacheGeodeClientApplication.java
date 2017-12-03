@@ -88,11 +88,11 @@ import example.app.client.repo.CustomerRepository;
  */
 @SpringBootApplication
 @ClientCacheApplication(name = "SpringBootApacheGeodeClientApplication")
-@EnableEntityDefinedRegions(basePackageClasses = Customer.class, clientRegionShortcut = ClientRegionShortcut.LOCAL)
+@EnableEntityDefinedRegions(basePackageClasses = Customer.class)
 @EnableGemfireRepositories(basePackageClasses = CustomerRepository.class)
 @EnableIndexing
-//@EnablePdx
-//@EnableClusterConfiguration(useHttp = true)
+@EnablePdx
+@EnableClusterConfiguration(useHttp = true)
 public class SpringBootApacheGeodeClientApplication {
 
 	public static void main(String[] args) {
