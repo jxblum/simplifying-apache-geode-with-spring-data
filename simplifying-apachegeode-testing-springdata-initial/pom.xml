@@ -11,15 +11,15 @@
 		<version>1.0.0.RELEASE</version>
 	</parent>
 
-	<artifactId>simplifying-apachegeode-testing-springdata-complete</artifactId>
+	<artifactId>simplifying-apachegeode-testing-springdata-initial</artifactId>
 	<packaging>jar</packaging>
 
-	<name>Simplifying Apache Geode Unit and Integration Testing with Spring Data Tests Complete</name>
+	<name>Simplifying Apache Geode Unit and Integration Testing with Spring Data Tests Initial</name>
 	<description>
 		This example demonstrates how to simplify Unit and Integration testing of Apache Geode in a Spring context
 		using the new Spring Data Tests for Pivotal GemFire (or Apache Geode) TestContext Framework.
 	</description>
-	<url>https://github.com/jxblum/simplifying-apache-geode-with-spring-data/simplifying-apachegeode-testing-springdata-complete</url>
+	<url>https://github.com/jxblum/simplifying-apache-geode-with-spring-data/simplifying-apachegeode-testing-springdata-initial</url>
 
 	<licenses>
 		<license>
