@@ -16,7 +16,6 @@
 
 package example.app.client;
 
-import static example.app.client.util.Assertions.assertCustomer;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.apache.geode.cache.Region;
@@ -113,7 +112,9 @@ public class SpringBootApacheGeodeClientApplication {
 
 			jonDoe = customerRepository.save(jonDoe);
 
-			assertCustomer(jonDoe, 1L, "Jon Doe");
+			assertThat(jonDoe).isNotNull();
+			assertThat(jonDoe.getId()).isEqualTo(1L);
+			assertThat(jonDoe.getName()).isEqualTo("Jon Doe");
 			assertThat(customerRepository.count()).isEqualTo(1);
 
 			System.err.println("Querying for Customer [SELECT * FROM /Customers WHERE name LIKE '%Doe']...");
