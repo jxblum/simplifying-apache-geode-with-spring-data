@@ -43,7 +43,7 @@ public class Customer {
 	private Long id;
 
 	@NonNull
-	@Indexed(from = "/Customers")
+	@Indexed
 	private String name;
 
 }
