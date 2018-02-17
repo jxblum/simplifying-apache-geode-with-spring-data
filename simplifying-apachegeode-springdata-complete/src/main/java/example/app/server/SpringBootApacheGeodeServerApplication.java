@@ -23,7 +23,6 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.data.gemfire.config.annotation.CacheServerApplication;
 import org.springframework.data.gemfire.config.annotation.EnableLocator;
 import org.springframework.data.gemfire.config.annotation.EnableManager;
-import org.springframework.data.gemfire.config.annotation.EnablePdx;
 
 /**
  * The {@link SpringBootApacheGeodeServerApplication} class is a {@link SpringBootApplication} used to bootstrap
@@ -40,7 +39,6 @@ import org.springframework.data.gemfire.config.annotation.EnablePdx;
  */
 @SpringBootApplication
 @CacheServerApplication(locators = "localhost[10334]")
-@EnablePdx
 public class SpringBootApacheGeodeServerApplication {
 
 	public static void main(String[] args) {
