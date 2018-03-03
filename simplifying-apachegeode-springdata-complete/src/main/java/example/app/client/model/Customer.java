@@ -42,8 +42,11 @@ public class Customer {
 	@Id @NonNull
 	private Long id;
 
-	@NonNull
-	@Indexed
+	@Indexed @NonNull
 	private String name;
 
+	public Customer identifiedBy(Long id) {
+		setId(id);
+		return this;
+	}
 }

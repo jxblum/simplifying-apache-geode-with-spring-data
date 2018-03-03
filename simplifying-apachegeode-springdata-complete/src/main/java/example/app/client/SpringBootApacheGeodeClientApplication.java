@@ -18,6 +18,8 @@ package example.app.client;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.List;
+
 import org.apache.geode.cache.Region;
 import org.apache.geode.cache.client.ClientCache;
 import org.apache.geode.cache.client.ClientRegionShortcut;
@@ -32,9 +34,11 @@ import org.springframework.data.gemfire.config.annotation.EnableClusterConfigura
 import org.springframework.data.gemfire.config.annotation.EnableEntityDefinedRegions;
 import org.springframework.data.gemfire.config.annotation.EnableIndexing;
 import org.springframework.data.gemfire.config.annotation.EnablePdx;
+import org.springframework.data.gemfire.function.config.EnableGemfireFunctionExecutions;
 import org.springframework.data.gemfire.repository.config.EnableGemfireRepositories;
 import org.springframework.data.repository.CrudRepository;
 
+import example.app.client.function.IdentityFunctionExecutions;
 import example.app.client.model.Customer;
 import example.app.client.repo.CustomerRepository;
 
@@ -88,6 +92,7 @@ import example.app.client.repo.CustomerRepository;
 @SpringBootApplication
 @ClientCacheApplication(name = "SpringBootApacheGeodeClientApplication")
 @EnableEntityDefinedRegions(basePackageClasses = Customer.class)
+@EnableGemfireFunctionExecutions(basePackageClasses = IdentityFunctionExecutions.class)
 @EnableGemfireRepositories(basePackageClasses = CustomerRepository.class)
 @EnableIndexing
 @EnablePdx
@@ -100,10 +105,12 @@ public class SpringBootApacheGeodeClientApplication {
 
 	@Bean
 	@SuppressWarnings("unused")
-	ApplicationRunner runner(CustomerRepository customerRepository) {
+	ApplicationRunner runner(CustomerRepository customerRepository,
+			IdentityFunctionExecutions identityFunctionExecutions) {
 
 		return args -> {
 
+      /*
 			assertThat(customerRepository.count()).isEqualTo(0);
 
 			Customer jonDoe = Customer.newCustomer(1L, "Jon Doe");
@@ -124,6 +131,27 @@ public class SpringBootApacheGeodeClientApplication {
 			assertThat(queriedJonDoe).isEqualTo(jonDoe);
 
 			System.err.printf("Customer was [%s]%n", queriedJonDoe);
+      */
+
+			Customer janeDoe = Customer.newCustomer(2L, "Jane Doe");
+
+			assertThat(janeDoe).isNotNull();
+			assertThat(janeDoe.getId()).isEqualTo(2L);
+			assertThat(janeDoe.getName()).isEqualTo("Jane Doe");
+
+			janeDoe = unwrap(identityFunctionExecutions.identify(janeDoe));
+
+			System.err.printf("Identified %s as [%d]%n", janeDoe.getName(), janeDoe.getId());
+
+			assertThat(janeDoe).isNotNull();
+			assertThat(janeDoe.getId()).isNotNull();
+			assertThat(janeDoe.getId()).isNotEqualTo(2L);
+			assertThat(janeDoe.getName()).isEqualTo("Jane Doe");
 		};
+	}
+
+	private Customer unwrap(Object obj) {
+		return obj instanceof List && ((List) obj).size() == 1 ? (Customer) ((List) obj).get(0)
+			: obj instanceof Customer ? (Customer) obj : null;
 	}
 }
