@@ -55,20 +55,25 @@
 	</developers>
 
 	<properties>
-		<spring-data-tests-4-gemfire.version>0.1.0.BUILD-SNAPSHOT</spring-data-tests-4-gemfire.version>
+		<spring-test-data-geode.version>0.0.1.BUILD-SNAPSHOT</spring-test-data-geode.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-tests-4-gemfire</artifactId>
-			<version>${spring-data-tests-4-gemfire.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
 			<groupId>io.springoneplatform.2017</groupId>
 			<artifactId>simplifying-apachegeode-springdata-complete</artifactId>
 			<version>${project.parent.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springoneplatform.2017</groupId>
+			<artifactId>simplifying-apachegeode-testing-springdata-initial</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-test-data-geode</artifactId>
+			<version>${spring-test-data-geode.version}</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
