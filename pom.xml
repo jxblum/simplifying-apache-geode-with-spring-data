@@ -17,6 +17,7 @@
   <packaging>pom</packaging>
 
   <modules>
+    <module>simplifying-apachegeode-springboot-complete</module>
     <module>simplifying-apachegeode-springdata-initial</module>
     <module>simplifying-apachegeode-springdata-complete</module>
     <module>simplifying-apachegeode-testing-springdata-initial</module>
