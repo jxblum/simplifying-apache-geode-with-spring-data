@@ -128,6 +128,6 @@ public class SpringApacheGeodeConfigurationUnitTests {
 	@Configuration
 	@EnableGemFireMockObjects
 	@Import(SpringApacheGeodeConfiguration.class)
-	static class TestConfiguration {
-	}
+	static class TestConfiguration { }
+
 }

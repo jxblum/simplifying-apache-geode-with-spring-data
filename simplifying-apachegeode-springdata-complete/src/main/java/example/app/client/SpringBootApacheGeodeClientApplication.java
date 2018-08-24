@@ -24,6 +24,7 @@ import org.apache.geode.cache.client.ClientRegionShortcut;
 import org.apache.geode.cache.client.Pool;
 import org.apache.geode.cache.query.Index;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.Bean;
@@ -95,7 +96,11 @@ import example.app.client.repo.CustomerRepository;
 public class SpringBootApacheGeodeClientApplication {
 
 	public static void main(String[] args) {
-		new SpringApplicationBuilder(SpringBootApacheGeodeClientApplication.class).web(false).build().run(args);
+
+		new SpringApplicationBuilder(SpringBootApacheGeodeClientApplication.class).
+			web(WebApplicationType.NONE)
+			.build()
+			.run(args);
 	}
 
 	@Bean
