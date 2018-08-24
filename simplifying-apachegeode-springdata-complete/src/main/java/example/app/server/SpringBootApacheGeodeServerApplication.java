@@ -16,6 +16,7 @@
 
 package example.app.server;
 
+import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.Configuration;
@@ -42,7 +43,11 @@ import org.springframework.data.gemfire.config.annotation.EnableManager;
 public class SpringBootApacheGeodeServerApplication {
 
 	public static void main(String[] args) {
-		new SpringApplicationBuilder(SpringBootApacheGeodeServerApplication.class).web(false).build().run(args);
+
+		new SpringApplicationBuilder(SpringBootApacheGeodeServerApplication.class)
+			.web(WebApplicationType.NONE)
+			.build()
+			.run(args);
 	}
 
 	@Configuration
@@ -50,6 +55,6 @@ public class SpringBootApacheGeodeServerApplication {
 	@EnableManager(start = true)
 	@Profile("locator-manager")
 	@SuppressWarnings("unused")
-	static class LocatorManagerConfiguration {
-	}
+	static class LocatorManagerConfiguration { }
+
 }
