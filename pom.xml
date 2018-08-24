@@ -89,17 +89,17 @@
     <maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
     <maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <assertj.version>3.9.0</assertj.version>
-    <cp-elements.version>1.0.0.M4</cp-elements.version>
-    <jackson.version>2.9.5</jackson.version>
-    <mockito.version>2.15.0</mockito.version>
+    <assertj.version>3.11.0</assertj.version>
+    <cp-elements.version>1.0.0.M5</cp-elements.version>
+    <jackson.version>2.9.6</jackson.version>
+    <mockito.version>2.21.0</mockito.version>
     <multithreadedtc.version>1.01</multithreadedtc.version>
 <!--
     <spring.version>5.0.6.RELEASE</spring.version>
 -->
-    <spring-data-releasetrain.version>Kay-SR7</spring-data-releasetrain.version>
-    <spring-data-geode.version>2.0.7.RELEASE</spring-data-geode.version>
-    <spring-data-gemfire.version>2.0.7.RELEASE</spring-data-gemfire.version>
+    <spring-data-releasetrain.version>Kay-SR9</spring-data-releasetrain.version>
+    <spring-data-geode.version>2.0.9.RELEASE</spring-data-geode.version>
+    <spring-data-gemfire.version>2.0.9.RELEASE</spring-data-gemfire.version>
     <spring-shell.version>1.2.0.RELEASE</spring-shell.version>
   </properties>
 
