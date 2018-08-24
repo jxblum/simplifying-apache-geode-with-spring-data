@@ -55,7 +55,7 @@
 	</developers>
 
 	<properties>
-		<spring-test-data-geode.version>0.0.1.BUILD-SNAPSHOT</spring-test-data-geode.version>
+		<spring-test-data-geode.version>0.0.1.M1</spring-test-data-geode.version>
 	</properties>
 
 	<dependencies>
@@ -71,7 +71,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-test-data-geode</artifactId>
+			<artifactId>spring-data-geode-test</artifactId>
 			<version>${spring-test-data-geode.version}</version>
 			<scope>test</scope>
 		</dependency>
