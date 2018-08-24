@@ -6,15 +6,14 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>io.springoneplatform.2017</groupId>
     <artifactId>simplifying-apachegeode-springdata</artifactId>
+    <groupId>io.springoneplatform.2017</groupId>
     <version>1.0.0.RELEASE</version>
   </parent>
 
-  <artifactId>simplifying-apachegeode-springboot-complete</artifactId>
+  <artifactId>simplifying-apachegeode-springboot-initial</artifactId>
   <packaging>jar</packaging>
 
-  <name>Simplifying Apache Geode with Spring Boot Complete</name>
   <description>
     This example demonstrates a very simple, Spring Boot-based, Spring Data Geode-enabled,
     Apache Geode client application.
