@@ -26,7 +26,7 @@ import org.springframework.data.gemfire.config.annotation.EnableLocator;
 import org.springframework.data.gemfire.config.annotation.EnableManager;
 
 /**
- * The {@link SpringBootApacheGeodeServerApplication} class is a {@link SpringBootApplication} used to bootstrap
+ * The {@link SpringDataApacheGeodeServerApplication} class is a {@link SpringBootApplication} used to bootstrap
  * an Apache Geode server.
  *
  * @author John Blum
@@ -39,12 +39,12 @@ import org.springframework.data.gemfire.config.annotation.EnableManager;
  * @since 1.0.0
  */
 @SpringBootApplication
-@CacheServerApplication(locators = "localhost[10334]")
-public class SpringBootApacheGeodeServerApplication {
+@CacheServerApplication(locators = "localhost[10334]", port = 0)
+public class SpringDataApacheGeodeServerApplication {
 
 	public static void main(String[] args) {
 
-		new SpringApplicationBuilder(SpringBootApacheGeodeServerApplication.class)
+		new SpringApplicationBuilder(SpringDataApacheGeodeServerApplication.class)
 			.web(WebApplicationType.NONE)
 			.build()
 			.run(args);

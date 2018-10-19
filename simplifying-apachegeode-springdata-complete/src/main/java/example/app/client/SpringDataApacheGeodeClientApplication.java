@@ -40,7 +40,7 @@ import example.app.client.model.Customer;
 import example.app.client.repo.CustomerRepository;
 
 /**
- * The {@link SpringBootApacheGeodeClientApplication} class is a simple Spring Boot, Apache Geode
+ * The {@link SpringDataApacheGeodeClientApplication} class is a simple Spring Boot, Apache Geode
  * cache client application enabled with Spring Data Geode to store and query data in Apache Geode.
  *
  * The purpose of this application is to demonstrate that no boilerplate code (i.e. plumbing) is required at all
@@ -87,17 +87,17 @@ import example.app.client.repo.CustomerRepository;
  * @since 1.0.0
  */
 @SpringBootApplication
-@ClientCacheApplication(name = "SpringBootApacheGeodeClientApplication")
+@ClientCacheApplication(name = "SpringDataApacheGeodeClientApplication")
+@EnableClusterConfiguration(useHttp = true)
 @EnableEntityDefinedRegions(basePackageClasses = Customer.class)
 @EnableGemfireRepositories(basePackageClasses = CustomerRepository.class)
 @EnableIndexing
 @EnablePdx
-@EnableClusterConfiguration(useHttp = true)
-public class SpringBootApacheGeodeClientApplication {
+public class SpringDataApacheGeodeClientApplication {
 
 	public static void main(String[] args) {
 
-		new SpringApplicationBuilder(SpringBootApacheGeodeClientApplication.class).
+		new SpringApplicationBuilder(SpringDataApacheGeodeClientApplication.class).
 			web(WebApplicationType.NONE)
 			.build()
 			.run(args);
