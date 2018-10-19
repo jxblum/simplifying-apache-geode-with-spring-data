@@ -31,7 +31,7 @@ import org.springframework.data.gemfire.config.annotation.EnableManager;
  * @since 1.0.0
  */
 @SpringBootApplication
-@CacheServerApplication(locators = "localhost[10334]")
+@CacheServerApplication(locators = "localhost[10334]", port = 0)
 public class SpringBootApacheGeodeServerApplication {
 
   public static void main(String[] args) {
